@@ -20,7 +20,7 @@ export default function App () {
       .fill('')
       .map((_, i) => ({ key: `${i}`, text: `test ${i}` }))
     setItems(testArray)
-  })
+  }, [])
 
   const onSwipeValueChanged = swipeData => {
     const { key, value } = swipeData
@@ -49,14 +49,14 @@ export default function App () {
           <Animated.View
             style={[
               styles.rowFrontContainer,
-/*               {
+               {
                 height: rowTranslateAnimatedValues[
                   data.item.key
                 ].interpolate({
                   inputRange: [0, 1],
                   outputRange: [0, 50]
                 }),
-              } */
+              } 
             ]}
           >
             <View style={styles.rowFront}>
@@ -67,10 +67,10 @@ export default function App () {
         renderHiddenItem={ (data) => ( 
           <View style={styles.rowBack}></View>
   )}
-        /* disableRightSwipe
+        disableRightSwipe
         rightOpenValue={-Dimensions.get('window').width}
         onSwipeValueChange={onSwipeValueChanged}
-        useNativeDriver={false} */
+        useNativeDriver={false} 
       />
     </View>
   )
